@@ -20,7 +20,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { ErmisChat } from "ermis-chat-js-sdk";
 import { RTCView } from 'react-native-webrtc'; // Thêm vào import
-import { CallEventData, ErmisDirectCallNative, UserCallInfo } from 'ermis-call-react-native-sdk';
+import { CallEventData, ErmisDirectCallNative, UserCallInfo } from 'ermis-rn-webrtc';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';

@@ -1,4 +1,4 @@
-src/ermis-call-react-native-sdk/.npmignore
+src/ermis-rn-webrtc/.npmignore
 node_modules
 dist
 build

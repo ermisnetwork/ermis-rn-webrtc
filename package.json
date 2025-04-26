@@ -1,6 +1,6 @@
 {
-  "name": "ermis-call-react-native-sdk",
-  "version": "1.0.2",
+  "name": "ermis-rn-webrtc",
+  "version": "1.0.0",
   "description": "A call SDK designed for React Native applications, providing functionalities for managing audio and video calls.",
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ermisnetwork/ermis-call-react-native-sdk.git"
+    "url": "git+https://github.com/ermisnetwork/ermis-rn-webrtc.git"
   },
   "keywords": [
     "react-native",
@@ -20,12 +20,12 @@
     "sdk",
     "webrtc"
   ],
-  "author": "Your Name",
+  "author": "Ermis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ermisnetwork/ermis-call-react-native-sdk/issues"
+    "url": "https://github.com/ermisnetwork/ermis-rn-webrtc/issues"
   },
-  "homepage": "https://github.com/ermisnetwork/ermis-call-react-native-sdk#readme",
+  "homepage": "https://github.com/ermisnetwork/ermis-rn-webrtc#readme",
   "dependencies": {
     "react-native-webrtc": "^124.0.5"
   },

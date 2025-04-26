@@ -7,12 +7,12 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/ermis-call-react-native-sdk.cjs.js',
+      file: 'dist/ermis-rn-webrtc.cjs.js',
       format: 'cjs',
       sourcemap: true,
     },
     {
-      file: 'dist/ermis-call-react-native-sdk.esm.js',
+      file: 'dist/ermis-rn-webrtc.esm.js',
       format: 'esm',
       sourcemap: true,
     },
