@@ -158,7 +158,7 @@ export class ErmisDirectCallNative {
     }
   }
 
-  public async startLocalStream(
+  private async startLocalStream(
     constraints: MediaStreamConstraints = { audio: true, video: true }
   ) {
     const stream = await mediaDevices.getUserMedia(constraints);

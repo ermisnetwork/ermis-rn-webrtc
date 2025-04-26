@@ -19,7 +19,7 @@ import {
   Header,
 } from 'react-native/Libraries/NewAppScreen';
 import { ErmisChat } from "ermis-chat-js-sdk";
-import { RTCView } from 'react-native-webrtc'; // Thêm vào import
+import { RTCView } from 'react-native-webrtc';
 import { CallEventData, ErmisDirectCallNative, UserCallInfo } from 'ermis-rn-webrtc';
 
 function App(): React.JSX.Element {
@@ -30,13 +30,13 @@ function App(): React.JSX.Element {
   };
 
   const safePadding = '5%';
-  const PROJECT_ID = 'b44937e4-c0d4-4a73-847c-3730a923ce83';
-  const API_KEY = 'kUCqqbfEQxkZge7HHDFcIxfoHzqSZUam';
-  const USER_ID = '0xf72d58f7353c2461953302a4b214d09ff33eeba1';
-  const API_URL = 'https://api-internal.ermis.network';
-  const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMHhmNzJkNThmNzM1M2MyNDYxOTUzMzAyYTRiMjE0ZDA5ZmYzM2VlYmExIiwiY2xpZW50X2lkIjoiNmZiZGVjYjAtMWVjOC00ZTMyLTk5ZDctZmYyNjgzZTMwOGI3IiwiY2hhaW5faWQiOjAsInByb2plY3RfaWQiOiJiNDQ5MzdlNC1jMGQ0LTRhNzMtODQ3Yy0zNzMwYTkyM2NlODMiLCJhcGlrZXkiOiJrVUNxcWJmRVF4a1pnZTdISERGY0l4Zm9IenFTWlVhbSIsImVybWlzIjp0cnVlLCJleHAiOjE4NDU0MDkwMDk5ODYsImFkbWluIjpmYWxzZSwiZ2F0ZSI6ZmFsc2V9.r18drh5J4Rq2-znFx_RwA3hJbqoJBV5iBrpurvYgARg';
-  const SESSION_ID = '8cf60120-6e05-46d4-b913-ef69670b8dd7';
-  const CID = 'messaging:b44937e4-c0d4-4a73-847c-3730a923ce83:b5e9c9f8c28a602894d279a89bcf6582c218';
+  const PROJECT_ID = 'YOUR_PROJECT_ID';
+  const API_KEY = 'YOUR_API_KEY';
+  const USER_ID = 'YOUR_USER_ID';
+  const API_URL = 'YOUR_API_URL';
+  const TOKEN = 'YOUR_TOKEN';
+  const SESSION_ID = 'YOUR_SESSION_ID';
+  const CID = 'YOUR_CID';
 
 
   const [callClient, setCallClient] = useState<any>(null)
