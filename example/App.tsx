@@ -125,7 +125,7 @@ function App(): React.JSX.Element {
       console.log('---onError---', msg);
 
     };
-    // Cleanup khi unmount
+    // Cleanup unmount
     return () => {
       if (callClient) {
         callClient.onCallEvent = undefined;
