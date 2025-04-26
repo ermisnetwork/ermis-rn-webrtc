@@ -7,16 +7,6 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/ermis-rn-webrtc.cjs.js',
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: 'dist/ermis-rn-webrtc.esm.js',
-      format: 'esm',
-      sourcemap: true,
-    },
-    {
       file: 'dist/index.js',
       format: 'es',
       sourcemap: true,

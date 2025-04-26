@@ -20,6 +20,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { ErmisChat } from "ermis-chat-js-sdk";
 import { RTCView } from 'react-native-webrtc';
+// @ts-ignore
 import { CallEventData, ErmisDirectCallNative, UserCallInfo } from 'ermis-rn-webrtc';
 
 function App(): React.JSX.Element {

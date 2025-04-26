@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "ermis-chat-js-sdk": "^1.4.7",
-    "ermis-rn-webrtc": "^1.0.0",
+    "ermis-rn-webrtc": "^1.0.3",
     "react": "19.0.0",
     "react-native": "0.78.2",
     "react-native-webrtc": "^124.0.5"
