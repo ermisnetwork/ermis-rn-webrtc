@@ -1,0 +1,14 @@
+src/ermis-call-react-native-sdk/.npmignore
+node_modules
+dist
+build
+coverage
+*.log
+*.ts
+*.test.ts
+examples
+jest.config.js
+rollup.config.js
+tsconfig.json
+README.md
+LICENSE

@@ -1,0 +1,44 @@
+{
+  "name": "ermis-call-react-native-sdk",
+  "version": "1.0.2",
+  "description": "A call SDK designed for React Native applications, providing functionalities for managing audio and video calls.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermisnetwork/ermis-call-react-native-sdk.git"
+  },
+  "keywords": [
+    "react-native",
+    "call",
+    "sdk",
+    "webrtc"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ermisnetwork/ermis-call-react-native-sdk/issues"
+  },
+  "homepage": "https://github.com/ermisnetwork/ermis-call-react-native-sdk#readme",
+  "dependencies": {
+    "react-native-webrtc": "^124.0.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "jest": "^27.0.6",
+    "rollup": "^4.40.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.0.3",
+    "tslib": "^2.8.1",
+    "typescript": "^4.5.4"
+  }
+}
