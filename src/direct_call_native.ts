@@ -115,6 +115,12 @@ export class ErmisDirectCallNative {
   /** Flag indicating if the device is offline */
   private isOffline: boolean = false;
 
+  /**
+   * True if this call instance is destroyed (e.g., when another device accepts the call).
+   * When true, SIGNAL_CALL events will be ignored.
+   */
+  private isDestroyed = false;
+
   constructor(client: any, sessionID: string) {
     this._client = client;
     this.cid = '';
@@ -436,6 +442,7 @@ export class ErmisDirectCallNative {
 
       switch (action) {
         case CallAction.CREATE_CALL:
+          this.isDestroyed = false;
           await this.startLocalStream({ audio: true, video: true });
           this.setUserInfo(cid, eventUserId);
           this.setCallStatus(CallStatus.RINGING);
@@ -477,12 +484,13 @@ export class ErmisDirectCallNative {
             if (eventSessionId !== this.sessionID) {
               this.setCallStatus(CallStatus.ENDED);
               this.destroy();
+              this.isDestroyed = true;
             }
           }
           break;
 
         case CallAction.SIGNAL_CALL:
-          if (eventUserId === this.userID) return;
+          if (eventUserId === this.userID || this.isDestroyed) return;
 
           if (
             typeof signal === 'object' &&

@@ -1,6 +1,6 @@
 {
   "name": "ermis-rn-webrtc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A call SDK designed for React Native applications, providing functionalities for managing audio and video calls.",
   "type": "module",
   "main": "dist/index.js",
