@@ -651,6 +651,8 @@ export class ErmisDirectCallNative {
     }
 
     this.setConnectionMessage(null);
+    this.cid = '';
+    this.callType = '';
   }
 
   private destroy() {
@@ -661,6 +663,7 @@ export class ErmisDirectCallNative {
   }
 
   public async createCall(callType: string, cid: string) {
+    this.cid = cid;
     return await this._sendSignal({
       action: CallAction.CREATE_CALL,
       cid,
