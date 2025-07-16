@@ -167,12 +167,39 @@ export class ErmisDirectCallNative {
   private async startLocalStream(
     constraints: MediaStreamConstraints = { audio: true, video: true }
   ) {
-    const stream = await mediaDevices.getUserMedia(constraints);
-    if (this.onLocalStream) {
-      this.onLocalStream(stream);
+    // Get the list of available media devices
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    // Check if the device has a camera (video input)
+    const hasCamera = devices.some(device => device.kind === 'videoinput');
+
+    // If the device has a camera, set video to true; otherwise, only get audio
+    const finalConstraints: MediaStreamConstraints = {
+      audio: constraints.audio,
+      video: hasCamera ? constraints.video : false,
+    };
+
+    try {
+      // Request the media stream with the determined constraints
+      const stream = await mediaDevices.getUserMedia(finalConstraints);
+      if (this.callStatus === CallStatus.ENDED) {
+        // If the call has ended, stop the local stream tracks
+        stream.getTracks().forEach(track => track.stop());
+        this.destroy();
+        return;
+      }
+
+      if (this.onLocalStream) {
+        this.onLocalStream(stream);
+      }
+      this.localStream = stream;
+      return stream;
+    } catch (error) {
+      console.error('Error getting user media:', error);
+      // if (typeof this.onError === 'function') {
+      //   this.onError('Unable to access microphone/camera');
+      // }
+      return null;
     }
-    this.localStream = stream;
-    return stream;
   }
 
   private setConnectionMessage(message: string | null) {
@@ -450,11 +477,14 @@ export class ErmisDirectCallNative {
             // it means another device (or tab) of the same user has started a call.
             // In this case, mark this call instance as destroyed and ignore further events.
             this.isDestroyed = true;
+            this.destroy();
             return;
           }
 
           this.isDestroyed = false;
+          this.callStatus = '';
           await this.startLocalStream({ audio: true, video: true });
+          if (this.callStatus === CallStatus.ENDED) return;
           this.setUserInfo(cid, eventUserId);
           this.setCallStatus(CallStatus.RINGING);
           this.callType = is_video ? 'video' : 'audio';
